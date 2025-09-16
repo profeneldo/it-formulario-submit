@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.contenedor{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
 body{
     background-color: #eef7ff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -166,7 +172,7 @@ form textarea:focus {
   box-shadow: 0 0 5px rgba(77,134,156,0.5);
 }
 
-form button {
+.enviar {
   width: 100%;
   padding: 12px;
   background-color: #4d869c;
@@ -178,10 +184,29 @@ form button {
   transition: background-color 0.3s ease;
 }
 
-form button:hover {
+.enviar:hover {
+ 
   background-color: #7ab2b2;
 }
 
+.seccion_gracias{
+    width: 80%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn_gracias{
+    position: relative;
+    top: 15px;
+    text-decoration: none;
+
+}
+
+.mail{
+    width: 40%;
+    height: 40%;
+}
 
 /* menu hambuerguesa y responsive */
 
