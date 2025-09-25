@@ -8,10 +8,12 @@
 
   <link rel="shortcut icon" href="./assets/icons/web-development.png" type="image/x-icon">
 
- 
+  <meta name="description" content="Tecnilogía educativa, pagina sobre el uso educativo de las TIC en diferentes formas de representación, difusión y acceso al conocimiento y a la cultura ">
+  <meta name="keywords" content="tecnología, educación, TIC, mundo digital, robótica, ">
+  <meta name="author" content="Neldo">
 
  
-  <title>Página sobre Tecnología Educativa</title>
+  <title>Contactanos | Página sobre Tecnología Educativa</title>
 
   <link rel="stylesheet" href="./css/style.css">
 
@@ -37,11 +39,15 @@
         ☰
       </div>
       <ul id="menu">
-        <li><a href="index.html"><img class="icono" src="./assets/icons/home_pin_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Inicio</a></li>
-        <li><a href="robotica.html"><img class="icono" src="./assets/icons/robot_2_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Robótica</a></li>
-        <li><a href="impresion.html"><img class="icono" src="./assets/icons/print_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Impresión 3D</a></li>
+        <li><a href="index.html"><img class="icono" src="./assets/icons/home_pin_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Inicio</a>
+        </li>
+        <li><a href="robotica.html"><img class="icono" src="./assets/icons/robot_2_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Robótica</a>
+        </li>
+        <li><a href="impresion.html"><img class="icono" src="./assets/icons/print_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Impresión 3D</a>
+        </li>
+
          <li><a href="formulario.html"><img class="icono"
-              src="./assets/icons/contact_page_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Formulario</a>
+              src="./assets/icons/contact_page_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="">Contactanos</a>
         </li>
       </ul>
     </nav>
@@ -50,20 +56,21 @@
   </section>
 
   <main>
-    <section>
-      <h2>formulario de contacto Netlify</h2>
-      <form name="contact" method="POST" data-netlify="true" action="/gracias.html">
+    <section >
+      
+      <form name="contact" method="POST" >
+        <h2>Formulario de contacto Netlify</h2>
           <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" name="nombre" required>
+            <label for="nombre" >Nombre:</label>
+            <input type="text" name="nombre" required>
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" name="email" required>
+            <label for="email" >Email:</label>
+            <input type="email" name="email" required>
           </div>
           <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje:</label>
-            <textarea class="form-control" name="mensaje" rows="4"></textarea>
+            <label for="mensaje" >Mensaje:</label>
+            <textarea  name="mensaje" rows="4"></textarea>
           </div>
           <button type="submit" class="enviar">Enviar</button>
         </form>
