@@ -258,3 +258,136 @@ form textarea:focus {
         padding: 10px;
     }
 }
+
+
+/* From Uiverse.io by nikk7007 */ 
+.slice {
+  --c1: #202020;
+  --c2: #4d869c;
+  --size-letter: 18px;
+  padding: 0.5em 1em;
+  font-size: var(--size-letter);
+
+  background-color: transparent;
+  border: calc(var(--size-letter) / 6) solid var(--c2);
+  border-radius: 0.2em;
+  cursor: pointer;
+
+  overflow: hidden;
+  position: relative;
+  transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+
+  & > .text {
+    font-weight: 700;
+    color: var(--c2);
+    position: relative;
+    z-index: 1;
+    transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+  }
+}
+
+.slice::after {
+  content: "";
+
+  width: 0;
+  height: calc(300% + 1em);
+
+  position: absolute;
+  translate: -50% -50%;
+  inset: 50%;
+  rotate: 30deg;
+
+  background-color: var(--c2);
+  transition: 1000ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.slice:hover {
+  & > .text {
+    color: var(--c1);
+  }
+  &::after {
+    width: calc(120% + 1em);
+  }
+}
+
+.slice:active {
+  scale: 0.98;
+  filter: brightness(0.9);
+}
+
+
+/* From Uiverse.io by vinodjangid07 */ 
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  margin: 10px auto;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
