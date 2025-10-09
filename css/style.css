@@ -187,7 +187,7 @@ form textarea:focus {
 .enviar:hover {
     background-color: #7ab2b2;
 }
-
+/* seccion gracias personalizada */
 .seccion_gracias{
     width: 80%;
     margin-top: 40px;
@@ -202,10 +202,12 @@ form textarea:focus {
 
 }
 
-.mail{
+.img_gracias{
     width: 40%;
     height: 40%;
 }
+
+
 
 /* menu hambuerguesa y responsive */
 
