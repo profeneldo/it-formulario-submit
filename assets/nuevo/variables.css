@@ -1,0 +1,322 @@
+/* === Variables globales === */
+:root {
+  /* Tipografías */
+  --fuente-principal: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --fuente-secundaria: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Colores principales */
+  --color-fondo: #eef7ff;
+  --color-texto: #000;
+  --color-nav: #7ab2b2;
+  --color-header: #4d869c;
+  --color-footer: #cde8e5;
+  --color-borde: #7ab2b2;
+  --color-blanco: #fff;
+
+  /* Sombras */
+  --sombra-base: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --sombra-boton: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+}
+
+/* === Reset general === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+}
+
+/* === Estructura general === */
+.contenedor {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* === Header y navegación === */
+header {
+  width: 100%;
+  padding: 2px;
+  background-color: var(--color-header);
+  color: var(--color-blanco);
+}
+
+nav {
+  background-color: var(--color-nav);
+  color: var(--color-blanco);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  padding: 10px;
+}
+
+/* Animación subrayado */
+nav ul li:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-blanco);
+  display: block;
+  position: relative;
+  top: 3px;
+  animation: ampliar-linea 0.5s;
+}
+
+@keyframes ampliar-linea {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* === Tipografía === */
+p {
+  font-family: var(--fuente-secundaria);
+}
+
+/* === Footer === */
+footer {
+  width: 100%;
+  padding: 5px;
+  background-color: var(--color-footer);
+  text-align: center;
+}
+
+/* === Secciones === */
+section {
+  width: 95%;
+  margin: 10px auto;
+  z-index: 50;
+}
+
+/* === Hero e imágenes === */
+.hero {
+  width: 100%;
+  height: 400px;
+  background: url("../assets/img/portada1.jpg") no-repeat center/cover;
+  
+  /* ***** saca esto ****** */
+    margin: 0;
+    padding: 0;
+}
+
+.medio {
+  width: 100%;
+  height: 150px;
+  background: url("../assets/img/cosas.png") no-repeat center/cover fixed;
+}
+
+/* === Formulario === */
+form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--color-blanco);
+  border: 2px solid var(--color-borde);
+  border-radius: 10px;
+  box-shadow: var(--sombra-base);
+}
+
+form h2,
+form label {
+  color: var(--color-header);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--color-header);
+  box-shadow: 0 0 5px rgba(77,134,156,0.5);
+}
+
+/* Botón enviar */
+.enviar {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-header);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+  background-color: var(--color-nav);
+}
+
+/* === Sección Gracias === */
+.seccion_gracias {
+  width: 80%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn_gracias {
+  position: relative;
+  top: 15px;
+  text-decoration: none;
+}
+
+.img_gracias {
+  width: 40%;
+  height: 40%;
+}
+
+/* === Menú hamburguesa (Responsive) === */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--color-blanco);
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-nav);
+    width: 42%;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  header h2 {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  section {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+/* === Botones animados === */
+button {
+  outline: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  border-radius: 0.5em;
+  box-shadow: var(--sombra-boton);
+  overflow: hidden;
+  transition: 0.6s cubic-bezier(.16,1,.3,1);
+}
+
+button div:nth-child(1) {
+  background-color: var(--color-header);
+}
+
+button div:nth-child(2) {
+  background-color: var(--color-nav);
+}
+
+button div span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0.75em 1.125em;
+}
+
+button p {
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--color-blanco);
+}
+
+button:hover div {
+  transform: translateY(-50px);
+}
+
+/* === Redes sociales === */
+.card {
+    /* ***** saca esto ****** */
+ width: fit-content;
+  height: fit-content;
+
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    overflow: hidden;
+  transition: 0.3s;
+}
+/* ***** saca esto ****** */
+.socialSvg {
+  width: 17px;
+}
+
+.containerOne:hover { background-color: #d62976; }
+.containerTwo:hover { background-color: #00acee; }
+.containerThree:hover { background-color: #0072b1; }
+.containerFour:hover { background-color: #128C7E; }
+
+.socialSvg path {
+  fill: var(--color-blanco);
+}
