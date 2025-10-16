@@ -1,342 +1,302 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* === Variables globales === */
+:root {
+  /* Tipografías */
+  --fuente-principal: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --fuente-secundaria: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Colores principales */
+  --color-fondo: #ffecd2;
+  --color-texto: #000;
+  --color-nav: #ff9a8b;
+  --color-header: #ff6b35;
+  --color-footer: #f7931e;
+  --color-borde: #7ab2b2;
+  --color-blanco: #fff;
+
+  /* Sombras */
+  --sombra-base: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --sombra-boton: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
 }
 
-.contenedor{
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+/* === Reset general === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #eef7ff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   margin: 0;
-   padding: 0;  
-   box-sizing: border-box; 
+body {
+  background-color: var(--color-fondo);
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
 }
 
-
-header{
-    width: 100%;
-    padding: 2px;
-    background-color: #4d869c;
-    color: #fff;
-    
-
+/* === Estructura general === */
+.contenedor {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-nav{
-    background-color: #7ab2b2;
-    color: #fff;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* === Header y navegación === */
+header {
+  width: 100%;
+  padding: 2px;
+  background-color: var(--color-header);
+  color: var(--color-blanco);
 }
 
-nav ul{
-    list-style: none;
+nav {
+  background-color: var(--color-nav);
+  color: var(--color-blanco);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav ul li{
-    display: inline-block;
-    padding: 10px;
+nav ul {
+  list-style: none;
 }
 
-nav ul li a{
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
+nav ul li {
+  display: inline-block;
+  padding: 10px;
 }
 
-/* nav ul li:hover{
-  background-color: #4d869c;
-} */
-
-/* linea de subrayado utilizando animacion de css */
-
-nav ul li:hover::after{
-	content: "";
-	width: 100%;
-	height: 3px;
-	background-color: #fff;
-	display: block;
-
-	position: relative;
-	top: 3px;
-
-	animation-name: ampliar-linea;
-	animation-duration: 0.5s;
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  padding: 10px;
 }
 
-
-
+/* Animación subrayado */
+nav ul li:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-blanco);
+  display: block;
+  position: relative;
+  top: 3px;
+  animation: ampliar-linea 0.5s;
+}
 
 @keyframes ampliar-linea {
-	from{
-		width: 0%;
-	}
-	to{
-		width: 100%;
-	}
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
-p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* === Tipografía === */
+p {
+  font-family: var(--fuente-secundaria);
 }
 
-footer{
-    width: 100%;
-    padding: 5px;
-    background-color: #cde8e5;
-    text-align: center;
+/* === Footer === */
+footer {
+  width: 100%;
+  padding: 5px;
+  background-color: var(--color-footer);
+  text-align: center;
 }
 
-section{
-    width: 95%;
-    margin: 10px auto;
-    z-index: 50;
+/* === Secciones === */
+section {
+  width: 95%;
+  margin: 10px auto;
+  z-index: 50;
 }
 
-.icono{
-    position: relative;
-    top: 5px;
+/* === Hero e imágenes === */
+.hero {
+  width: 100%;
+  height: 400px;
+  background: url("../assets/img/portada1.jpg") no-repeat center/cover;
+  margin: 0;
+  padding: 0;
 }
 
-.hero{
-    width: 100%;
-    height: 400px;
-    margin: 0;
-    padding: 0;
-     
-
-    background-image: url("../assets/img/portada1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
+.medio {
+  width: 100%;
+  height: 150px;
+  background: url("../assets/img/cosas.png") no-repeat center/cover fixed;
 }
 
-.medio{
-    width: 100%;
-    height: 150px;
-
-    background-image: url("../assets/img/cosas.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-/* --- Estilos del formulario --- */
+/* === Formulario === */
 form {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 2px solid #7ab2b2;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: var(--color-blanco);
+  border: 2px solid var(--color-borde);
+  border-radius: 10px;
+  box-shadow: var(--sombra-base);
 }
 
-form h2 {
-    text-align: center;
-    color: #4d869c;
-    margin-bottom: 20px;
-}
-
+form h2,
 form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #4d869c;
+  color: var(--color-header);
 }
 
 form input,
 form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #7ab2b2;
-    border-radius: 6px;
-    font-size: 1em;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font-size: 1em;
 }
 
 form input:focus,
 form textarea:focus {
-    outline: none;
-    border-color: #4d869c;
-    box-shadow: 0 0 5px rgba(77,134,156,0.5);
+  outline: none;
+  border-color: var(--color-header);
+  box-shadow: 0 0 5px rgba(77,134,156,0.5);
 }
 
+/* Botón enviar */
 .enviar {
-    width: 100%;
-    padding: 12px;
-    background-color: #4d869c;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-header);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .enviar:hover {
-    background-color: #7ab2b2;
-}
-/* seccion gracias personalizada */
-.seccion_gracias{
-    width: 80%;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-evenly;
+  background-color: var(--color-nav);
 }
 
-.btn_gracias{
-    position: relative;
-    top: 15px;
-    text-decoration: none;
-
+/* === Sección Gracias === */
+.seccion_gracias {
+  width: 80%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.img_gracias{
-    width: 40%;
-    height: 40%;
+.btn_gracias {
+  position: relative;
+  top: 15px;
+  text-decoration: none;
 }
 
+.img_gracias {
+  width: 40%;
+  height: 40%;
+}
 
-
-/* menu hambuerguesa y responsive */
-
-/* --- Botón hamburguesa --- */
+/* === Menú hamburguesa (Responsive) === */
 .menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 10px;
-    color: #fff;
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--color-blanco);
 }
 
-/* --- Responsive 480px --- */
 @media (max-width: 480px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #7ab2b2;
-        width: 42%;
-        margin: 0;
-        padding: 0;
-    }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-nav);
+    width: 42%;
+  }
 
-    nav ul li {
-        display: block;
-        text-align: left;
-        padding: 15px;
-    }
+  nav ul li {
+    display: block;
+    text-align: left;
+    padding: 15px;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    nav ul.active {
-        display: flex;
-    }
+  nav ul.active {
+    display: flex;
+  }
 
-    header h1 {
-        font-size: 1.5em;
-        text-align: center;
-    }
+  header h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
 
-    header h2 {
-        font-size: 1em;
-        text-align: center;
-    }
+  header h2 {
+    font-size: 1em;
+    text-align: center;
+  }
 
-    section {
-        width: 90%;
-        padding: 10px;
-    }
+  section {
+    width: 90%;
+    padding: 10px;
+  }
 }
 
-/* estilo para el boton del formulario */
-/* From Uiverse.io by Sergestra */ 
+/* === Botones animados === */
 button {
- outline: 0;
- border: 0;
- display: flex;
- flex-direction: column;
- width: 100%;
- max-width: 140px;
- height: 50px;
- border-radius: 0.5em;
- box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
- overflow: hidden;
-}
-
-button div {
- transform: translateY(0px);
- width: 100%;
-}
-
-button,
-button div {
- transition: 0.6s cubic-bezier(.16,1,.3,1);
-}
-
-button div span {
- display: flex;
- align-items: center;
- justify-content: space-between;
- height: 50px;
- padding: 0.75em 1.125em;
+  outline: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  border-radius: 0.5em;
+  box-shadow: var(--sombra-boton);
+  overflow: hidden;
+  transition: 0.6s cubic-bezier(.16,1,.3,1);
 }
 
 button div:nth-child(1) {
- background-color: #4d869c;
+  background-color: var(--color-header);
 }
 
 button div:nth-child(2) {
- background-color: #7ab2b2;
+  background-color: var(--color-nav);
 }
 
-button:hover {
- box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
-}
-
-button:hover div {
- transform: translateY(-50px);
+button div span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0.75em 1.125em;
 }
 
 button p {
- font-size: 17px;
- font-weight: bold;
- color: #ffffff;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--color-blanco);
 }
 
-button:active {
- transform: scale(0.95);
+button:hover div {
+  transform: translateY(-50px);
 }
 
-
-/* estilo para las redes sociales */
-/* From Uiverse.io by vinodjangid07 */ 
+/* === Redes sociales === */
 .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: #eee;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 10px;
   gap: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  padding: 10px;
   margin: 10px auto;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
 }
 
-/* for all social containers*/
+.socialSvg {
+  width: 17px;
+} 
+
 .socialContainer {
   width: 52px;
   height: 52px;
@@ -344,56 +304,14 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  transition-duration: .3s;
-}
-/* instagram*/
-.containerOne:hover {
-  background-color: #d62976;
-  transition-duration: .3s;
-}
-/* twitter*/
-.containerTwo:hover {
-  background-color: #00acee;
-  transition-duration: .3s;
-}
-/* linkdin*/
-.containerThree:hover {
-  background-color: #0072b1;
-  transition-duration: .3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-  background-color: #128C7E;
-  transition-duration: .3s;
+  transition: 0.3s;
 }
 
-.socialContainer:active {
-  transform: scale(0.9);
-  transition-duration: .3s;
-}
-
-.socialSvg {
-  width: 17px;
-}
+.containerOne:hover { background-color: #d62976; }
+.containerTwo:hover { background-color: #00acee; }
+.containerThree:hover { background-color: #0072b1; }
+.containerFour:hover { background-color: #128C7E; }
 
 .socialSvg path {
-  fill: rgb(255, 255, 255);
+  fill: var(--color-blanco);
 }
-
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 0.3s both;
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-

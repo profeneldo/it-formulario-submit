@@ -114,8 +114,8 @@ section {
   background: url("../assets/img/portada1.jpg") no-repeat center/cover;
   
   /* ***** saca esto ****** */
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 .medio {
@@ -284,8 +284,8 @@ button:hover div {
 /* === Redes sociales === */
 .card {
     /* ***** saca esto ****** */
- width: fit-content;
-  height: fit-content;
+ /* width: fit-content;
+  height: fit-content; */
 
   background-color: #eee;
   display: flex;
@@ -308,9 +308,9 @@ button:hover div {
   transition: 0.3s;
 }
 /* ***** saca esto ****** */
-.socialSvg {
+/* .socialSvg {
   width: 17px;
-}
+} */
 
 .containerOne:hover { background-color: #d62976; }
 .containerTwo:hover { background-color: #00acee; }
